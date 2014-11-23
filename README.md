@@ -1,4 +1,4 @@
-Application Android pour le support bépo des clavier externes.
+Application Android pour le support bépo des clavier externes. Nécessite Android 4.1 minimum.
 
-Android app providing an external keyboard layout for bépo, a french dvorak-like keymap.
+Android app(4.1+) providing an external keyboard layout for bépo, a french dvorak-like keymap.
 
