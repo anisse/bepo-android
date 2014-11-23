@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Bépo clavier externe</string>
+    <string name="keyboard_layout_fr_bepo_label">Français bépo</string>
+</resources>
