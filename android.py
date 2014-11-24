@@ -27,6 +27,7 @@ keyTemplate = """key %(QWERTYNAME)s {
     label:              '%(UPPERNAME)s'
     base:               '%(LOWERNAME)s'
     shift, capslock:    '%(UPPERNAME)s'
+    shift+capslock:     '%(LOWER2NAME)s'
     ralt:               '%(ALTGRNAME)s'
     shift+ralt:         '%(SHALTGRNAME)s'
 }
@@ -74,7 +75,7 @@ xkbToQwerty = {
         'AC11': 'APOSTROPHE',
 
         'BKSL': 'BACKSLASH',
-        'LSGT': 'MUHENKAN', # what is this ?
+        'LSGT': 'MUHENKAN', # This is another backslash. bravo, G; we need to remap this in a key layout
 
         'AB01': 'Z',
         'AB02': 'X',
@@ -95,6 +96,7 @@ modifiersMap =  {
         'shift': 'UPPER',
         'option': 'ALTGR',
         '': 'LOWER',
+        'shift_capslock': 'LOWER2',
         'shift_option': 'SHALTGR',
     }
 
@@ -116,10 +118,10 @@ for k, v in xkb.tmplValues.iteritems():
     else:
         modifiers = ""
 
-    print("Key: %s, modifier: %s, value: %s"%(xkbName,modifiers,v))
+    #print("Key: %s, modifier: %s, value: %s"%(xkbName,modifiers,v))
     for km, vm in modifiersMap.iteritems():
         if modifiers == km:
-            print("%s %s: %s"%(xkbToQwerty[xkbName], modifiersMap[modifiers], v))
+            #print("%s %s: %s"%(xkbToQwerty[xkbName], modifiersMap[modifiers], v))
 
 
             # Unicode all the things
@@ -130,13 +132,13 @@ for k, v in xkb.tmplValues.iteritems():
             androidkeys[xkbToQwerty[xkbName]][vm + 'NAME'] = '\u' + value
 
 # special case for android dead keys
-androidkeys[xkbToQwerty['AD05']]['ALTGRNAME'] = '\\u0300'
-androidkeys[xkbToQwerty['AD02']]['ALTGRNAME'] = '\\u0301'
-androidkeys[xkbToQwerty['AD06']]['LOWERNAME'] = '\\u0302'
-androidkeys[xkbToQwerty['AC10']]['ALTGRNAME'] = '\\u0303'
+androidkeys[xkbToQwerty['AD05']]['ALTGRNAME'] = '\\u0300' #dead_grave
+androidkeys[xkbToQwerty['AD02']]['ALTGRNAME'] = '\\u0301' #dead_acute
+androidkeys[xkbToQwerty['AD06']]['LOWERNAME'] = '\\u0302' #dead_circumflex
+androidkeys[xkbToQwerty['AC10']]['ALTGRNAME'] = '\\u0303' #dead_tilde
 
 out = codecs.open(sys.argv[2], "w", "utf8")
 out.write("type OVERLAY\n\n")
-for k, v in androidkeys.iteritems():
+for k, v in iter(sorted(androidkeys.iteritems())):
     v['QWERTYNAME'] = k
     out.write( keyTemplate % v)
