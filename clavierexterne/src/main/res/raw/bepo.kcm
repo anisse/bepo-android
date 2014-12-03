@@ -1,4 +1,31 @@
+# File generated automatically
+# It's under MIT license - don't hesitate to contact me
+# Copyright (c) 2014 Anisse Astier <anisse@astier.eu> and PushVision
+
 type OVERLAY
+
+# Remap AZERTY to QWERTY, we want to be like in Generic.kl
+# This is a conscious decision, because we cannot attribute key labels to all
+# keys: ÉÀÈÊÇ, etc. don't have key labels (found in KeycodeLabels.h or
+# InputEventLabels.h)).
+# I'm also secretly hoping it might help with badly-programmed games that have
+# keyboard support, assume qwerty, and don't allow key remapping. If those
+# exist on Android.
+map key 16 Q
+map key 17 W
+map key 30 A
+map key 39 SEMICOLON
+map key 44 Z
+map key 50 M
+map key 51 COMMA
+# 102ND key we want to use, not as a BACKSLASH
+map key 86 PLUS
+# Others that might have been touched, just shooting in the dark
+map key 12 MINUS
+map key 13 EQUALS
+map key 21 Y
+map key 53 SLASH
+map key 100 ALT_RIGHT
 
 key 0 {
     label:              '\u0030'
@@ -8,7 +35,6 @@ key 0 {
     ralt:               '\u00D7'
     shift+ralt:         '\u00BE'
 }
-
 key 1 {
     label:              '\u0031'
     base:               '\u0022'
@@ -17,7 +43,6 @@ key 1 {
     ralt:               '\u2014'
     shift+ralt:         '\u201E'
 }
-
 key 2 {
     label:              '\u0032'
     base:               '\u00AB'
@@ -26,7 +51,6 @@ key 2 {
     ralt:               '\u003C'
     shift+ralt:         '\u201C'
 }
-
 key 3 {
     label:              '\u0033'
     base:               '\u00BB'
@@ -35,7 +59,6 @@ key 3 {
     ralt:               '\u003E'
     shift+ralt:         '\u201D'
 }
-
 key 4 {
     label:              '\u0034'
     base:               '\u0028'
@@ -44,7 +67,6 @@ key 4 {
     ralt:               '\u005B'
     shift+ralt:         '\u2264'
 }
-
 key 5 {
     label:              '\u0035'
     base:               '\u0029'
@@ -53,7 +75,6 @@ key 5 {
     ralt:               '\u005D'
     shift+ralt:         '\u2265'
 }
-
 key 6 {
     label:              '\u0036'
     base:               '\u0040'
@@ -62,7 +83,6 @@ key 6 {
     ralt:               '\u005E'
     shift+ralt:         '\u0020'
 }
-
 key 7 {
     label:              '\u0037'
     base:               '\u002B'
@@ -71,7 +91,6 @@ key 7 {
     ralt:               '\u00B1'
     shift+ralt:         '\u00AC'
 }
-
 key 8 {
     label:              '\u0038'
     base:               '\u002D'
@@ -80,7 +99,6 @@ key 8 {
     ralt:               '\u2212'
     shift+ralt:         '\u00BC'
 }
-
 key 9 {
     label:              '\u0039'
     base:               '\u002F'
@@ -89,7 +107,6 @@ key 9 {
     ralt:               '\u00F7'
     shift+ralt:         '\u00BD'
 }
-
 key A {
     label:              '\u0041'
     base:               '\u0061'
@@ -98,7 +115,6 @@ key A {
     ralt:               '\u00E6'
     shift+ralt:         '\u00C6'
 }
-
 key APOSTROPHE {
     label:              '\u004D'
     base:               '\u006D'
@@ -107,7 +123,6 @@ key APOSTROPHE {
     ralt:               '\u00AF'
     shift+ralt:         '\u00BA'
 }
-
 key B {
     label:              '\u004B'
     base:               '\u006B'
@@ -116,7 +131,6 @@ key B {
     ralt:               '\u007E'
     shift+ralt:         '\u2328'
 }
-
 key BACKSLASH {
     label:              '\u00C7'
     base:               '\u00E7'
@@ -125,7 +139,6 @@ key BACKSLASH {
     ralt:               '\u00B8'
     shift+ralt:         '\u002C'
 }
-
 key C {
     label:              '\u0058'
     base:               '\u0078'
@@ -134,7 +147,6 @@ key C {
     ralt:               '\u007D'
     shift+ralt:         '\u2019'
 }
-
 key COMMA {
     label:              '\u0047'
     base:               '\u0067'
@@ -143,7 +155,6 @@ key COMMA {
     ralt:               '\u00B5'
     shift+ralt:         '\u0020'
 }
-
 key D {
     label:              '\u0049'
     base:               '\u0069'
@@ -152,7 +163,6 @@ key D {
     ralt:               '\u00A8'
     shift+ralt:         '\u02D9'
 }
-
 key E {
     label:              '\u0050'
     base:               '\u0070'
@@ -161,7 +171,6 @@ key E {
     ralt:               '\u0026'
     shift+ralt:         '\u00A7'
 }
-
 key EQUALS {
     label:              '\u0060'
     base:               '\u0025'
@@ -170,7 +179,6 @@ key EQUALS {
     ralt:               '\u2030'
     shift+ralt:         '\u2033'
 }
-
 key F {
     label:              '\u0045'
     base:               '\u0065'
@@ -179,7 +187,6 @@ key F {
     ralt:               '\u20AC'
     shift+ralt:         '\u00A4'
 }
-
 key G {
     label:              '\u003B'
     base:               '\u002C'
@@ -188,7 +195,6 @@ key G {
     ralt:               '\u2019'
     shift+ralt:         '\u031B'
 }
-
 key GRAVE {
     label:              '\u0023'
     base:               '\u0024'
@@ -197,7 +203,6 @@ key GRAVE {
     ralt:               '\u2013'
     shift+ralt:         '\u00B6'
 }
-
 key H {
     label:              '\u0043'
     base:               '\u0063'
@@ -206,7 +211,6 @@ key H {
     ralt:               '\u00A9'
     shift+ralt:         '\u017F'
 }
-
 key I {
     label:              '\u0044'
     base:               '\u0064'
@@ -215,7 +219,6 @@ key I {
     ralt:               '\u00F0'
     shift+ralt:         '\u00D0'
 }
-
 key J {
     label:              '\u0054'
     base:               '\u0074'
@@ -224,7 +227,6 @@ key J {
     ralt:               '\u00FE'
     shift+ralt:         '\u00DE'
 }
-
 key K {
     label:              '\u0053'
     base:               '\u0073'
@@ -233,7 +235,6 @@ key K {
     ralt:               '\u00DF'
     shift+ralt:         '\u1E9E'
 }
-
 key L {
     label:              '\u0052'
     base:               '\u0072'
@@ -242,7 +243,6 @@ key L {
     ralt:               '\u00AE'
     shift+ralt:         '\u2122'
 }
-
 key LEFT_BRACKET {
     label:              '\u005A'
     base:               '\u007A'
@@ -251,7 +251,6 @@ key LEFT_BRACKET {
     ralt:               '\u0259'
     shift+ralt:         '\u018F'
 }
-
 key M {
     label:              '\u0051'
     base:               '\u0071'
@@ -260,7 +259,6 @@ key M {
     ralt:               '\u00B0'
     shift+ralt:         '\u0323'
 }
-
 key MINUS {
     label:              '\u00B0'
     base:               '\u003D'
@@ -269,16 +267,6 @@ key MINUS {
     ralt:               '\u2260'
     shift+ralt:         '\u2032'
 }
-
-key MUHENKAN {
-    label:              '\u00CA'
-    base:               '\u00EA'
-    shift, capslock:    '\u00CA'
-    shift+capslock:     '\u00EA'
-    ralt:               '\u002F'
-    shift+ralt:         '\u0020'
-}
-
 key N {
     label:              '\u003F'
     base:               '\u0027'
@@ -287,7 +275,6 @@ key N {
     ralt:               '\u00BF'
     shift+ralt:         '\u0309'
 }
-
 key O {
     label:              '\u004C'
     base:               '\u006C'
@@ -296,7 +283,6 @@ key O {
     ralt:               '\u002F'
     shift+ralt:         '\u0020'
 }
-
 key P {
     label:              '\u004A'
     base:               '\u006A'
@@ -305,7 +291,6 @@ key P {
     ralt:               '\u0133'
     shift+ralt:         '\u0132'
 }
-
 key PERIOD {
     label:              '\u0048'
     base:               '\u0068'
@@ -314,7 +299,14 @@ key PERIOD {
     ralt:               '\u2020'
     shift+ralt:         '\u2021'
 }
-
+key PLUS {
+    label:              '\u00CA'
+    base:               '\u00EA'
+    shift, capslock:    '\u00CA'
+    shift+capslock:     '\u00EA'
+    ralt:               '\u002F'
+    shift+ralt:         '\u0020'
+}
 key Q {
     label:              '\u0042'
     base:               '\u0062'
@@ -323,7 +315,6 @@ key Q {
     ralt:               '\u007C'
     shift+ralt:         '\u00A6'
 }
-
 key R {
     label:              '\u004F'
     base:               '\u006F'
@@ -332,7 +323,6 @@ key R {
     ralt:               '\u0153'
     shift+ralt:         '\u0152'
 }
-
 key RIGHT_BRACKET {
     label:              '\u0057'
     base:               '\u0077'
@@ -341,7 +331,6 @@ key RIGHT_BRACKET {
     ralt:               '\u02D8'
     shift+ralt:         '\u0020'
 }
-
 key S {
     label:              '\u0055'
     base:               '\u0075'
@@ -350,7 +339,6 @@ key S {
     ralt:               '\u00F9'
     shift+ralt:         '\u00D9'
 }
-
 key SEMICOLON {
     label:              '\u004E'
     base:               '\u006E'
@@ -359,7 +347,6 @@ key SEMICOLON {
     ralt:               '\u0303'
     shift+ralt:         '\u0020'
 }
-
 key SLASH {
     label:              '\u0046'
     base:               '\u0066'
@@ -368,7 +355,6 @@ key SLASH {
     ralt:               '\u02DB'
     shift+ralt:         '\u00AA'
 }
-
 key SPACE {
     label:              '\u00A0'
     base:               '\u0020'
@@ -377,7 +363,6 @@ key SPACE {
     ralt:               '\u005F'
     shift+ralt:         '\u202F'
 }
-
 key T {
     label:              '\u00C8'
     base:               '\u00E8'
@@ -386,7 +371,6 @@ key T {
     ralt:               '\u0300'
     shift+ralt:         '\u0060'
 }
-
 key U {
     label:              '\u0056'
     base:               '\u0076'
@@ -395,7 +379,6 @@ key U {
     ralt:               '\u02C7'
     shift+ralt:         '\u0020'
 }
-
 key V {
     label:              '\u003A'
     base:               '\u002E'
@@ -404,7 +387,6 @@ key V {
     ralt:               '\u2026'
     shift+ralt:         '\u00B7'
 }
-
 key W {
     label:              '\u00C9'
     base:               '\u00E9'
@@ -413,7 +395,6 @@ key W {
     ralt:               '\u0301'
     shift+ralt:         '\u02DD'
 }
-
 key X {
     label:              '\u0059'
     base:               '\u0079'
@@ -422,7 +403,6 @@ key X {
     ralt:               '\u007B'
     shift+ralt:         '\u2018'
 }
-
 key Y {
     label:              '\u0021'
     base:               '\u0302'
@@ -431,7 +411,6 @@ key Y {
     ralt:               '\u00A1'
     shift+ralt:         '\u0020'
 }
-
 key Z {
     label:              '\u00C0'
     base:               '\u00E0'
@@ -440,4 +419,3 @@ key Z {
     ralt:               '\u005C'
     shift+ralt:         '\u0020'
 }
-

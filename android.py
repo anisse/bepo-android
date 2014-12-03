@@ -31,7 +31,6 @@ keyTemplate = """key %(QWERTYNAME)s {
     ralt:               '%(ALTGRNAME)s'
     shift+ralt:         '%(SHALTGRNAME)s'
 }
-
 """
 
 xkbToQwerty = {
@@ -75,7 +74,7 @@ xkbToQwerty = {
         'AC11': 'APOSTROPHE',
 
         'BKSL': 'BACKSLASH',
-        'LSGT': 'MUHENKAN', # This is another backslash. bravo, G; we need to remap this in a key layout
+        'LSGT': 'PLUS',
 
         'AB01': 'Z',
         'AB02': 'X',
@@ -138,7 +137,36 @@ androidkeys[xkbToQwerty['AD06']]['LOWERNAME'] = '\\u0302' #dead_circumflex
 androidkeys[xkbToQwerty['AC10']]['ALTGRNAME'] = '\\u0303' #dead_tilde
 
 out = codecs.open(sys.argv[2], "w", "utf8")
-out.write("type OVERLAY\n\n")
+out.write(u"""# File generated automatically
+# It's under MIT license - don't hesitate to contact me
+# Copyright (c) 2014 Anisse Astier <anisse@astier.eu> and PushVision
+
+type OVERLAY
+
+# Remap AZERTY to QWERTY, we want to be like in Generic.kl
+# This is a conscious decision, because we cannot attribute key labels to all
+# keys: ÉÀÈÊÇ, etc. don't have key labels (found in KeycodeLabels.h or
+# InputEventLabels.h)).
+# I'm also secretly hoping it might help with badly-programmed games that have
+# keyboard support, assume qwerty, and don't allow key remapping. If those
+# exist on Android.
+map key 16 Q
+map key 17 W
+map key 30 A
+map key 39 SEMICOLON
+map key 44 Z
+map key 50 M
+map key 51 COMMA
+# 102ND key we want to use, not as a BACKSLASH
+map key 86 PLUS
+# Others that might have been touched, just shooting in the dark
+map key 12 MINUS
+map key 13 EQUALS
+map key 21 Y
+map key 53 SLASH
+map key 100 ALT_RIGHT
+
+""")
 for k, v in iter(sorted(androidkeys.iteritems())):
     v['QWERTYNAME'] = k
     out.write( keyTemplate % v)
