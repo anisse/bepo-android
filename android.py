@@ -135,6 +135,7 @@ androidkeys[xkbToQwerty['AD05']]['ALTGRNAME'] = '\\u0300' #dead_grave
 androidkeys[xkbToQwerty['AD02']]['ALTGRNAME'] = '\\u0301' #dead_acute
 androidkeys[xkbToQwerty['AD06']]['LOWERNAME'] = '\\u0302' #dead_circumflex
 androidkeys[xkbToQwerty['AC10']]['ALTGRNAME'] = '\\u0303' #dead_tilde
+androidkeys[xkbToQwerty['AC03']]['ALTGRNAME'] = '\\u0308' #dead_diaeresis
 
 out = codecs.open(sys.argv[2], "w", "utf8")
 out.write(u"""# File generated automatically

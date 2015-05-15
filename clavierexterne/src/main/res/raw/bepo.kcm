@@ -160,7 +160,7 @@ key D {
     base:               '\u0069'
     shift, capslock:    '\u0049'
     shift+capslock:     '\u0069'
-    ralt:               '\u00A8'
+    ralt:               '\u0308'
     shift+ralt:         '\u02D9'
 }
 key E {
