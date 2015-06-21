@@ -99,6 +99,14 @@ modifiersMap =  {
         'shift_option': 'SHALTGR',
     }
 
+ascii_set = set([
+'^', '~', '<', '=', '>', '|', '_', '-', ',', ';', '!', '?', '/', '.', '"', '(',
+')', '[', ']', '{', '}', '@', '$', '*', '&', '#', '%', '+', '0', '1', '2', '3',
+'4', '5', '6', '7', '8', '9', 'a', 'A', 'b', 'B', 'c', 'C', 'd', 'D', 'e', 'E',
+'f', 'F', 'g', 'G', 'h', 'H', 'i', 'I', 'j', 'J', 'k', 'K', 'l', 'L', 'm', 'M',
+'n', 'N', 'o', 'O', 'p', 'P', 'q', 'Q', 'r', 'R', 's', 'S', 't', 'T', 'u', 'U',
+'v', 'V', 'w', 'W', 'x', 'X', 'y', 'Y', 'z', 'Z'
+])
 
 androidkeys = {}
 for k in xkbToQwerty.itervalues():
@@ -123,12 +131,15 @@ for k, v in xkb.tmplValues.iteritems():
             #print("%s %s: %s"%(xkbToQwerty[xkbName], modifiersMap[modifiers], v))
 
 
-            # Unicode all the things
-            value = hex(ord(v))[2:].upper()
-            value = "0000"[0:4-len(value)] + value
+            if v in ascii_set:
+                androidkeys[xkbToQwerty[xkbName]][vm + 'NAME'] = v
+            else:
+                # Unicode all the things
+                value = hex(ord(v))[2:].upper()
+                value = "0000"[0:4-len(value)] + value
 
-            #Prepare the map for what we'll print later
-            androidkeys[xkbToQwerty[xkbName]][vm + 'NAME'] = '\u' + value
+                #Prepare the map for what we'll print later
+                androidkeys[xkbToQwerty[xkbName]][vm + 'NAME'] = '\u' + value
 
 # special case for android dead keys
 androidkeys[xkbToQwerty['AD05']]['ALTGRNAME'] = '\\u0300' #dead_grave
