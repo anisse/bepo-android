@@ -3,4 +3,7 @@
      <keyboard-layout android:name="bepo"
              android:label="@string/keyboard_layout_fr_bepo_label"
              android:keyboardLayout="@raw/bepo" />
+     <keyboard-layout android:name="bepo"
+             android:label="@string/keyboard_layout_fr_bepo_mini_label"
+             android:keyboardLayout="@raw/bepo-mini" />
  </keyboard-layouts>
