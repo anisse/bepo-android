@@ -6,12 +6,11 @@ Android app(4.1+) providing an external keyboard layout for bépo, a french dvor
 
 # Utilisation
 
-1. Paramètres -> Langue et saisie.
+1. Paramètres -> Système -> Clavier.
 2. Brancher le clavier externe.
-3. Cliquer sur le clavier externe qui devrait avoir été détecté.
-4. Cliquer sur « Configurer les disposition clavier ».
-5. Descendre jusqu’à « Français », ajouter Bépo et valider.
-6. Choisir la disposition Bépo.
+3. Cliquer sur Clavier Physique -> puis le clavier physique qui devrait avoir été détecté.
+4. Cliquer sur votre clavier virtuel et sa langue.
+5. Choisir la disposition « Français (bépo) »
 
 Ou voir [cette page sur bepo.fr](http://bepo.fr/wiki/BepoAndroid)
 pour des copies d’écran.
